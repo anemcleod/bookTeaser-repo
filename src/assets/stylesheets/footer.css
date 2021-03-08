@@ -1,0 +1,228 @@
+.footer-container {
+    position: relative;
+    background-color: rgb(43, 74, 72);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    overflow: hidden;
+}
+
+.cta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px
+}
+
+.cta-container div {
+    width: 100%;
+}
+
+.cta-container div h3 {
+    font-size: 26px;
+    margin-bottom: 0
+}
+.cta-purchase {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.cta-container div p {
+    font-size: 16px;
+    position: relative;
+    margin-top: 20px
+}
+
+.cta-container p span {
+    position: absolute;
+    top: -5px;
+    right: -37px;
+    font-size: 12px;
+}
+
+.buy__button, .back__button, .close-payment {
+    font-family: Alata, sans-serif;
+    font-size: 20px;
+    border: none;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+}
+
+.buy__button {
+    background-color: rgb(178, 51, 31);
+    border-radius: 10px;
+    padding: 5px 20px;
+    max-height: 55px;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    width: 100%
+}
+.social-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    margin: 40px 20px;
+    background-color: rgb(204, 221, 217);
+    cursor: pointer;
+    color: white;
+    font-size: 25px
+}
+
+.contributors, .legal {
+    padding: 20px
+}
+
+.legal {
+    margin-bottom: 110px;
+    padding-top: 0;
+} 
+
+.contributor h4, .legal h4 {
+        font-size: 26px;
+        margin: 0;
+    }
+
+.legal h4 {
+    cursor: pointer;
+}
+
+.legal h4:hover {
+    color: rgb(204, 221, 217);
+}
+.contributor p {
+        font-size: 16px; 
+        margin-top: 5px; 
+    }
+
+.back__button {
+    background-color: #ccddd9;
+    height: 150px;
+    width: 350px;
+    padding-top: 55px;
+    padding-right: 75px;
+    clip-path: polygon(35% 0%, 0% 100%, 100% 100%);
+    position: absolute;
+    bottom: 0;
+    right: -50px;
+}
+
+.back__button span {
+    display: block;
+    font-family: Montserrat, sans-serif;
+    text-transform: lowercase;
+    font-size: 15.4px;
+    margin-top: -8px;
+}
+
+.buy__button:hover, .back__button:hover, .social-btn:hover {
+    color:rgb(43, 74, 72);
+}
+
+.payment-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #ccddd9a6;
+}
+.payment-form-container {
+    background-color: rgb(43, 74, 72);
+    padding: 50px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close-payment {
+    background-color: rgb(178, 51, 31);
+    border-radius: 10px;
+    padding: 8px 20px;
+    max-height: 55px;
+    border: none;
+
+}
+
+/*=============================media queries =========================*/
+
+
+@media screen and (min-width: 600px) {
+    .footer-menu {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        min-width: 600px;
+        max-width: 1200px;
+    }
+
+    .cta-container div {
+        width: 535px;
+    }
+    
+    .cta-container div h3 {
+        font-size: 48px;
+    }
+
+    .cta-container div p {
+        font-size: 30px;
+        margin-top: 10px
+    }
+    
+    .cta-container p span {
+        font-size: 15px;
+        top: 0px;
+        right: -50px;
+    }
+
+    .buy__button, .back__button {
+        font-size: 30px;
+    }
+    
+    .buy__button {
+        margin-bottom: 30px;
+        right: 10px;
+    }
+
+    .contributors, .legal {
+       width: 33.333%
+    }
+    .contributor h4, .legal h4 {
+        font-size: 30px;
+    }
+
+    .contributor p {
+        font-size: 20px; 
+    }
+    .legal h4 {
+        margin-left: 100px
+    }
+    .legal {
+        margin-bottom: 0;
+        padding-top: 20px;
+    } 
+}
+
+
+@media screen and (min-width: 992px) {
+    .footer-menu {
+        min-width: 900px;
+    }
+
+    .cta-container {
+        margin: 50px 0 0 0
+    }
+}

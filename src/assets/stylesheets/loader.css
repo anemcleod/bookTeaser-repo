@@ -1,0 +1,114 @@
+.loader-container {
+    /* background-color: #380916;; */
+    background-image: radial-gradient(circle, #8e1835, #7c152f, #6a1229, #590f22, #480c1c);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.rotate-device {
+    position: absolute;
+    top: -60px;
+    left: -20px;
+    opacity: 0.7;
+
+}
+.loader {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: linear-gradient(90deg, rgba(99,16,16,0) 0%, rgba(9,9,121,0) 35%);
+}
+
+.details {
+    margin-top: -120px;
+    text-align: center;
+}
+.book-title {
+    font-family: 'Alata', sans-serif;
+    text-transform: uppercase;
+    font-size: 60px;
+    color: #faba6d;
+}
+
+.author {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 25px;
+    color: #faba6d; 
+}
+
+#p1, #p2, #p3, #p4, #p5, #p6, #p7, #p8, #p9 {
+    animation: page ease 2s forwards;
+    transform-box: fill-box;
+    transform-origin: left;
+    
+}
+
+#p1, #p2, #p3, #p4, #p5, #p6, #p7, #p8, #p9, #p10, #path2469, path {
+    stroke: #faba6d;
+}
+
+#p2 {
+    animation: page ease 2s infinite;
+    animation-delay: 0.3s;
+}
+
+#p3 {
+    animation: page ease 2s infinite;
+    animation-delay: 0.6s;
+}
+
+#p4 {
+    animation-delay: 0.9s;
+}
+
+#p5 {
+    animation: page ease 2s infinite;
+    animation-delay: 1.2s;
+}
+
+#p6 {
+    animation-delay: 1.5s;
+}
+
+#p7 {
+    animation-delay: 1.8s;
+}
+
+#p8 {
+    animation-delay: 2.1s;
+}
+
+#p9 {
+    animation-delay: 2.4s;
+}
+
+#p10 {
+    animation-delay: 2.7.s;
+}
+
+#p1 {
+    animation-delay: 3s;
+}
+
+@keyframes page {
+    from {
+        transform: rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateZ(-180deg);
+    }
+}
+
+
+@media screen and (min-width: 900px) {
+    .rotate-device {
+        display: none
+    }
+
+}
