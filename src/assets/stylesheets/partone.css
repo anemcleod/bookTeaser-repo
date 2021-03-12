@@ -1,0 +1,123 @@
+.partone-container {
+    height: 100vh;
+}
+
+.scroll-partone {
+    min-height: 400%
+}
+
+.partone-background-container {
+    position: relative;
+    overflow: hidden;
+    height: max-content;
+}
+.partone-background {
+    position: relative;
+    width: 100%;
+    min-width: 700px;
+    min-height: 100vh;
+    object-fit: cover;
+}
+
+.fixed-background {
+   position: fixed;
+   bottom: 0;
+   left: 0;
+}
+.partone__title {
+    position: absolute;
+    color: white;
+    top: 8%;
+    z-index: 150
+}
+
+.partone_main_title, .partone-title {
+    font-size: 60px;
+    margin: 5px 0px;
+    text-transform: uppercase;
+    font-family: 'Alata', sans-serif;
+}
+.partone_main_title {
+    overflow-y: hidden;
+    transform: scaleY(0);
+    transition: transform 0.6s ease-out;
+}
+.partone_sub_title {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: -15px;
+    text-transform: capitalize;
+    overflow-y: hidden;
+    transform: scaleY(0);
+    transition: transform 0.6s ease-out;
+}
+
+.reveal-text {
+    transform: scaleY(1);
+}
+.partone-mountain-right, .partone-mountain-left {
+    position: absolute;
+}
+
+.partone-mountain-left {
+    width: 80%;
+    left: 35%;
+    bottom: 15%;
+
+}
+
+.partone-mountain-right {
+    width: 80%;
+    bottom: 10%;
+    right: 35%;
+}
+.partone-content-container {
+    position: absolute;
+    z-index: 100;
+    background-color: rgba(43, 74, 72, 0.7);
+    color: white;
+    padding: 20px;
+    margin-top: 200vh;
+    margin-bottom: 100vh;
+}
+
+.partone-title {
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+/*=============================media queries =========================*/
+
+
+@media screen and (min-width: 600px) {
+    .partone-content-container {
+        padding: 30px;
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        height: max-content;
+    }
+
+    .partone-column-container {
+        width: 45%;
+    }
+    
+    .partone_main_title {
+        font-size: 80px;
+    } 
+
+    .partone_sub_title {
+        font-size: 26.5px;
+    }
+
+    .partone-title {
+        font-size: 60px
+    }
+
+}
+
+@media screen and (min-width: 900px) {
+    .partone__title {
+        top: 9%;
+    }
+
+}

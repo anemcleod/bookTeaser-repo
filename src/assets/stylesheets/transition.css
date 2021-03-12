@@ -1,0 +1,33 @@
+.trans-container {
+    background-color:#380916;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trans-content {
+    color: white
+}
+
+.trans-title {
+    font-family: 'Alata', sans-serif;
+    font-size: 40px;
+    text-transform: uppercase;
+    overflow-y: hidden;
+    transform: scaleY(0);
+    transition: transform 0.3s ease-out;
+}
+
+.trans-subtitle {
+    margin-top: 5px;
+    font-size: 25px;
+    overflow-y: hidden;
+    transform: scaleY(0);
+    transition: transform 0.3s ease-out;
+}
+
+.reveal-trans-titles {
+    transform: scaleY(1);
+}
