@@ -16,19 +16,20 @@ const Trans = ({setOffsetY, setChapter}) => {
                 },1000)
             }, 2000)
         },1000)
-    }, [])
+    }, []);
 
  return (
     <div className="trans-container">
         <div className="trans-content">
             <div 
                 className={showTitle ?"trans-title reveal-trans-titles" :"trans-title" }>
-                    but this story is about the moment it began
+                but this story is about the moment it began
             </div>
+
             <div>
                 <div 
                     className={showSubTitle ?"trans-subtitle reveal-trans-titles" :"trans-subtitle" }>
-                        provocative line...
+                    provocative line...
                 </div>
             </div>
         </div>

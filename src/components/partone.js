@@ -1,11 +1,8 @@
 import React, {useState, useEffect, useRef} from 'react';
 import '../assets/stylesheets/partone.css';
-import background from '../assets/partone/background.png';
-import mountain_left from '../assets/partone/mountain_left.png';
-import mountain_right from '../assets/partone/mountain_right.png';
 
+const PartOne = ({setOffsetY, offsetY, setChapter, bayImages}) => {
 
-const PartOne = ({setOffsetY, offsetY, setChapter}) => {
     const handleScrollpo = () => setOffsetY(window.pageYOffset);
     const [zoom, setZoom] = useState(1);
     const fix = useRef(false);
@@ -36,7 +33,6 @@ const PartOne = ({setOffsetY, offsetY, setChapter}) => {
         };
 
       window.addEventListener("scroll", handleScrollpo);
-      console.log(`${offsetY}, ${window.innerHeight}, ${backgroundContainer.current.offsetHeight}`);
       
       return () => window.removeEventListener("scroll", handleScrollpo);
     }, [offsetY]);
@@ -45,53 +41,66 @@ const PartOne = ({setOffsetY, offsetY, setChapter}) => {
     return (
         <div className="partone-container">
               
-            <div className="scroll scroll-partone" ref={partonescroll}>
-            <div className="partone__title">
+            <div 
+                className="scroll scroll-partone" 
+                ref={partonescroll}>
+            
+                <div className="partone__title">
                     <div 
                         className={reveal.current ? "partone_main_title reveal-text" : "partone_main_title"}>
-                            part one
+                        part one
                     </div>
+
                     <div 
                         className={reveal.current ? "partone_sub_title reveal-text": "partone_sub_title"}>
-                            Rogue Pants in Halong Bay
+                        Rogue Pants in Halong Bay
                     </div>
                 </div>
-                <div className={fix.current ? "partone-background-container fixed-background" : "partone-background-container" } 
-                     ref={backgroundContainer}
-                     style={{
+
+                <div 
+                    className={fix.current ? "partone-background-container fixed-background" : "partone-background-container" } 
+                    ref={backgroundContainer}
+                    style={{
                         width: `${fix.current ? 100+zoom : 100}%`
                     }}>
-                <img 
-                    className="partone-background"
-                    src={background} alt="boat floating in Ha long Bay"/>
-                
-                <img 
-                    className="partone-mountain-left" 
-                    src={mountain_left} alt="limestone mountain"
-                    style={{
-                        width: `${80+zoom}%`,
-                        left: `${50+zoom}%`,
-                        bottom: `${0-zoom}%`
-                    }}/>
-                <img 
-                    className="partone-mountain-right" 
-                    src={mountain_right} alt="limestone mountain"
-                    style={{
-                        width: `${80+zoom}%`,
-                        right: `${45+zoom}%`,
-                        bottom: `${-5-zoom}%`
-                    }}/>
 
+                    <img 
+                        className="partone-background"
+                        src={bayImages ? bayImages.halongbay.url: ''} 
+                        alt="boat floating in Ha long Bay"/>
+                    
+                    <img 
+                        className="partone-mountain-left" 
+                        src={bayImages ? bayImages.mountleft.url : ''} alt="limestone mountain"
+                        style={{
+                            width: `${80+zoom}%`,
+                            left: `${50+zoom}%`,
+                            bottom: `${0-zoom}%`
+                        }}/>
+
+                    <img 
+                        className="partone-mountain-right" 
+                        src={bayImages ? bayImages.mountright.url: ''} alt="limestone mountain"
+                        style={{
+                            width: `${80+zoom}%`,
+                            right: `${45+zoom}%`,
+                            bottom: `${-5-zoom}%`
+                        }}/>
                 </div>
+
                 <div 
                     className="partone-content-container">
                     <div className="partone-column-container">
-                        <h1 className="partone-title">Ha Long Bay</h1>   
+                        <h1 className="partone-title">Ha Long Bay</h1> 
+
                         <p>Pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio. Mauris pharetra et ultrices neque ornare aenean euismod elementum. Volutpat consequat mauris nunc congue nisi vitae suscipit. Posuere urna nec tincidunt praesent semper feugiat. Faucibus interdum posuere lorem ipsum dolor sit amet consectetur. Porta non pulvinar neque laoreet suspendisse interdum consectetur. Ultrices dui sapien eget mi proin sed. Purus non enim praesent elementum facilisis. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae. </p>
+                        
                         <p>Pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio. Mauris pharetra et ultrices neque ornare aenean euismod elementum. Volutpat consequat mauris nunc congue nisi vitae suscipit. Posuere urna nec tincidunt praesent semper feugiat. Faucibus interdum posuere lorem ipsum dolor sit amet consectetur. Porta non pulvinar neque laoreet suspendisse interdum consectetur. Ultrices dui sapien eget mi proin sed. Purus non enim praesent elementum facilisis. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae. </p>
                     </div>
+
                     <div className="partone-column-container">
                         <p>Pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio. Mauris pharetra et ultrices neque ornare aenean euismod elementum. Volutpat consequat mauris nunc congue nisi vitae suscipit. Posuere urna nec tincidunt praesent semper feugiat. Faucibus interdum posuere lorem ipsum dolor sit amet consectetur. Porta non pulvinar neque laoreet suspendisse interdum consectetur. Ultrices dui sapien eget mi proin sed. Purus non enim praesent elementum facilisis. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae. </p>
+                        
                         <p>Pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio. Mauris pharetra et ultrices neque ornare aenean euismod elementum. Volutpat consequat mauris nunc congue nisi vitae suscipit. Posuere urna nec tincidunt praesent semper feugiat. Faucibus interdum posuere lorem ipsum dolor sit amet consectetur. Porta non pulvinar neque laoreet suspendisse interdum consectetur. Ultrices dui sapien eget mi proin sed. Purus non enim praesent elementum facilisis. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae. </p>
                     </div>
                 </div>

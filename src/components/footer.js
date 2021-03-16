@@ -25,9 +25,13 @@ const Footer = ({setOffsetY, setChapter}) => {
             <div>
                 <h3>want to read more?</h3>
             </div>
+
             <div className="cta-purchase">
                 <p>purchase the book<span>$2.99</span></p>
-                <button className="buy__button" onClick={togglePayment}>
+
+                <button 
+                    className="buy__button" 
+                    onClick={togglePayment}>
                     buy
                 </button>
             </div>
@@ -35,9 +39,17 @@ const Footer = ({setOffsetY, setChapter}) => {
 
         <div className="footer-menu">
             <div className="socials">
-                <div className="social-btn"><FontAwesomeIcon icon={['fab', 'facebook']}/></div>
-                <div className="social-btn"><FontAwesomeIcon icon={['fab', 'instagram']}/></div>
-                <div className="social-btn"><FontAwesomeIcon icon={['fab', 'linkedin']}/></div>
+                <div className="social-btn">
+                    <FontAwesomeIcon icon={['fab', 'facebook']}/>
+                </div>
+                
+                <div className="social-btn">
+                    <FontAwesomeIcon icon={['fab', 'instagram']}/>
+                </div>
+
+                <div className="social-btn">
+                    <FontAwesomeIcon icon={['fab', 'linkedin']}/>
+                </div>
             </div>
             
             <div className="contributors">
@@ -45,6 +57,7 @@ const Footer = ({setOffsetY, setChapter}) => {
                     <h4>Copyright</h4>
                     <p>Author Name 2020</p>
                 </div>
+
                 <div className="contributor">
                     <h4>Design</h4>
                     <p>Ane Mcleod</p>
@@ -52,11 +65,19 @@ const Footer = ({setOffsetY, setChapter}) => {
             </div>
 
             <div className="legal">
-                <Link to="/terms_and_conditions"><h4>t&amp;c's</h4></Link>
-                <button onClick={reset} class="back__button">go back <span>to the beginning</span></button>    
+                <Link to="/terms_and_conditions">
+                    <h4>t&amp;c's</h4>
+                </Link>
+
+                <button 
+                    onClick={reset} 
+                    className="back__button">
+                    go back <span>to the beginning</span>
+                </button>    
             </div>
 
         </div> 
+        
         {
             showPayment && <PaymentPortal togglePayment={togglePayment}/>
         }
