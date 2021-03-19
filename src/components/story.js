@@ -33,7 +33,8 @@ const Story = () => {
             trains.train18.url, trains.train19.url, trains.train20.url,
             trains.train21.url, trains.train22.url, trains.train23.url
           ]);
-          setChapter(1);
+          setTimeout(() => {
+            setChapter(1);}, 5000);
         }
       }
       fetchDataTrain();
@@ -43,8 +44,7 @@ const Story = () => {
         const fetchDataTime = async () => {
           const time = await Client.query( Prismic.Predicates.at('document.type', 'storytime'));
           if (time) {
-            setTimeImage(time.results[0].data);  
-            console.log(time.results[0].data);         
+            setTimeImage(time.results[0].data);      
           }
         }
         fetchDataTime();
@@ -54,8 +54,7 @@ const Story = () => {
             const fetchDataBay = async () => {
               const bay = await Client.query( Prismic.Predicates.at('document.type', 'halongbay'));
               if (bay) {
-                setBayImages(bay.results[0].data);  
-                console.log(bay.results[0].data);       
+                setBayImages(bay.results[0].data);       
               }
           }
           fetchDataBay();

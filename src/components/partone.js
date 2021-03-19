@@ -64,28 +64,37 @@ const PartOne = ({setOffsetY, offsetY, setChapter, bayImages}) => {
                         width: `${fix.current ? 100+zoom : 100}%`
                     }}>
 
-                    <img 
-                        className="partone-background"
-                        src={bayImages ? bayImages.halongbay.url: ''} 
-                        alt="boat floating in Ha long Bay"/>
-                    
-                    <img 
-                        className="partone-mountain-left" 
-                        src={bayImages ? bayImages.mountleft.url : ''} alt="limestone mountain"
-                        style={{
-                            width: `${80+zoom}%`,
-                            left: `${50+zoom}%`,
-                            bottom: `${0-zoom}%`
+                    {
+                        bayImages && (
+                        <img 
+                            className="partone-background"
+                            src={bayImages.halongbay.url} 
+                            alt="boat floating in Ha long Bay"/>
+                        )
+                    }
+                    {
+                        bayImages && (
+                        <img 
+                            className="partone-mountain-left" 
+                            src={bayImages.mountleft.url} alt="limestone mountain"
+                            style={{
+                                width: `${80+zoom}%`,
+                                left: `${50+zoom}%`,
+                                bottom: `${0-zoom}%`
+                            }}/>
+                        )
+                    }
+                    {   bayImages && (
+                        <img 
+                            className="partone-mountain-right" 
+                            src={bayImages.mountright.url} alt="limestone mountain"
+                            style={{
+                                width: `${80+zoom}%`,
+                                right: `${45+zoom}%`,
+                                bottom: `${-5-zoom}%`
                         }}/>
-
-                    <img 
-                        className="partone-mountain-right" 
-                        src={bayImages ? bayImages.mountright.url: ''} alt="limestone mountain"
-                        style={{
-                            width: `${80+zoom}%`,
-                            right: `${45+zoom}%`,
-                            bottom: `${-5-zoom}%`
-                        }}/>
+                    )
+                    }
                 </div>
 
                 <div 
