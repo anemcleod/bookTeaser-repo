@@ -9,9 +9,7 @@ import Footer from './footer';
 const Story = () => {
     const [offsetY, setOffsetY] = useState(0);
     const [chapter, setChapter] = useState(0);
-    const [IntroImages, setIntroImages] = useState(null);
-    const [bayImages, setBayImages] = useState(null);
-    const [timeImage, setTimeImage] = useState(null);
+    const [chapterImages, setChapterImages] = useState(null);
     
     const apiEndpoint = process.env.REACT_APP_PRISMIC_API_ENDPOINT
     const accessToken = process.env.REACT_APP_PRISMIC_ACCESS_TOKEN
@@ -19,47 +17,33 @@ const Story = () => {
     const Client = Prismic.client(apiEndpoint, { accessToken });
   
     useEffect(() => {
-    const fetchDataTrain = async () => {
-        const train = await Client.query( Prismic.Predicates.at('document.type', 'train'));
-        if (train) {
-          let trains = train.results[0].data;
-          setIntroImages([
-            trains.train0.url, trains.train1.url, trains.train2.url,
-            trains.train3.url, trains.train4.url, trains.train5.url,
-            trains.train6.url, trains.train7.url, trains.train8.url,
-            trains.train9.url, trains.train10.url, trains.train11.url,
-            trains.train12.url, trains.train13.url,trains.train14.url,
-            trains.train15.url, trains.train16.url, trains.train17.url,
-            trains.train18.url, trains.train19.url, trains.train20.url,
-            trains.train21.url, trains.train22.url, trains.train23.url
-          ]);
+    const fetchData = async () => {
+        const book = await Client.query( Prismic.Predicates.at('document.type', 'train'));
+        if (book) {
+          let images = book.results[0].data;
+          setChapterImages({
+            train: [
+                      images.train0.url, images.train1.url, images.train2.url,
+                      images.train3.url, images.train4.url, images.train5.url,
+                      images.train6.url, images.train7.url, images.train8.url,
+                      images.train9.url, images.train10.url, images.train11.url,
+                      images.train12.url, images.train13.url,images.train14.url,
+                      images.train15.url, images.train16.url, images.train17.url,
+                      images.train18.url, images.train19.url, images.train20.url,
+                      images.train21.url, images.train22.url, images.train23.url
+                    ],
+            time: images.timestamp.url,
+            halongbay: images.halongbay.url,
+            mountleft: images.mountleft.url,
+            mountright: images.mountright.url
+        });
           setTimeout(() => {
             setChapter(1);}, 5000);
         }
       }
-      fetchDataTrain();
+      fetchData();
     }, []);
 
-    useEffect(() => {
-        const fetchDataTime = async () => {
-          const time = await Client.query( Prismic.Predicates.at('document.type', 'storytime'));
-          if (time) {
-            setTimeImage(time.results[0].data);      
-          }
-        }
-        fetchDataTime();
-      }, []);
-
-      useEffect(() => {
-            const fetchDataBay = async () => {
-              const bay = await Client.query( Prismic.Predicates.at('document.type', 'halongbay'));
-              if (bay) {
-                setBayImages(bay.results[0].data);       
-              }
-          }
-          fetchDataBay();
-        }, []);
-  
     return(
         <>
         { (chapter === 0) && (
@@ -71,8 +55,8 @@ const Story = () => {
             offsetY={offsetY}
             setOffsetY={setOffsetY}
             setChapter={setChapter}
-            IntroImages={IntroImages}
-            timeImage={timeImage}/>
+            chapterImages={chapterImages}
+            />
           )
         }
 
@@ -89,7 +73,7 @@ const Story = () => {
             offsetY={offsetY}
             setOffsetY={setOffsetY}
             setChapter={setChapter}
-            bayImages={bayImages}/>
+            chapterImages={chapterImages}/>
           )
         }
         

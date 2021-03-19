@@ -2,7 +2,7 @@ import React, {useState, useEffect, useRef} from 'react';
 
 import "../assets/stylesheets/intro.css"
 
-const Intro = ({setOffsetY, offsetY, setChapter, IntroImages, timeImage}) => {
+const Intro = ({setOffsetY, offsetY, setChapter, chapterImages}) => {
     
     const [trainIndex, setTrainIndex] = useState(0); 
   
@@ -29,15 +29,15 @@ const Intro = ({setOffsetY, offsetY, setChapter, IntroImages, timeImage}) => {
         <div className="scroll" >
             <div className="intro-image-container">
                 {
-                    timeImage &&
+                    chapterImages &&
                     <img 
                         className="timestamp" 
-                        src={timeImage.timestamp.url} 
+                        src={chapterImages.time} 
                         alt="2am timestamp"/>
                 }
                 
                 {
-                  IntroImages ? IntroImages.map( (image, i) => {
+                  chapterImages ? chapterImages.train.map( (image, i) => {
                         return(
                             <img 
                             className="train-image" 

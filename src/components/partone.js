@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import '../assets/stylesheets/partone.css';
 
-const PartOne = ({setOffsetY, offsetY, setChapter, bayImages}) => {
+const PartOne = ({setOffsetY, offsetY, setChapter, chapterImages}) => {
 
     const handleScrollpo = () => setOffsetY(window.pageYOffset);
     const [zoom, setZoom] = useState(1);
@@ -38,7 +38,7 @@ const PartOne = ({setOffsetY, offsetY, setChapter, bayImages}) => {
     }, [offsetY]);
 
 
-    return bayImages ? (
+    return chapterImages ? (
         <div className="partone-container">
               
             <div 
@@ -67,13 +67,13 @@ const PartOne = ({setOffsetY, offsetY, setChapter, bayImages}) => {
                    
                         <img 
                             className="partone-background"
-                            src={bayImages.halongbay.url} 
+                            src={chapterImages.halongbay} 
                             alt="boat floating in Ha long Bay"/>
                       
                    
                         <img 
                             className="partone-mountain-left" 
-                            src={bayImages.mountleft.url} alt="limestone mountain"
+                            src={chapterImages.mountleft} alt="limestone mountain"
                             style={{
                                 width: `${80+zoom}%`,
                                 left: `${50+zoom}%`,
@@ -82,7 +82,7 @@ const PartOne = ({setOffsetY, offsetY, setChapter, bayImages}) => {
               
                         <img 
                             className="partone-mountain-right" 
-                            src={bayImages.mountright.url} alt="limestone mountain"
+                            src={chapterImages.mountright} alt="limestone mountain"
                             style={{
                                 width: `${80+zoom}%`,
                                 right: `${45+zoom}%`,
