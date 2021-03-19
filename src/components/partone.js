@@ -38,7 +38,7 @@ const PartOne = ({setOffsetY, offsetY, setChapter, bayImages}) => {
     }, [offsetY]);
 
 
-    return (
+    return bayImages ? (
         <div className="partone-container">
               
             <div 
@@ -64,16 +64,13 @@ const PartOne = ({setOffsetY, offsetY, setChapter, bayImages}) => {
                         width: `${fix.current ? 100+zoom : 100}%`
                     }}>
 
-                    {
-                        bayImages && (
+                   
                         <img 
                             className="partone-background"
                             src={bayImages.halongbay.url} 
                             alt="boat floating in Ha long Bay"/>
-                        )
-                    }
-                    {
-                        bayImages && (
+                      
+                   
                         <img 
                             className="partone-mountain-left" 
                             src={bayImages.mountleft.url} alt="limestone mountain"
@@ -82,9 +79,7 @@ const PartOne = ({setOffsetY, offsetY, setChapter, bayImages}) => {
                                 left: `${50+zoom}%`,
                                 bottom: `${0-zoom}%`
                             }}/>
-                        )
-                    }
-                    {   bayImages && (
+              
                         <img 
                             className="partone-mountain-right" 
                             src={bayImages.mountright.url} alt="limestone mountain"
@@ -93,8 +88,7 @@ const PartOne = ({setOffsetY, offsetY, setChapter, bayImages}) => {
                                 right: `${45+zoom}%`,
                                 bottom: `${-5-zoom}%`
                         }}/>
-                    )
-                    }
+                 
                 </div>
 
                 <div 
@@ -115,7 +109,7 @@ const PartOne = ({setOffsetY, offsetY, setChapter, bayImages}) => {
                 </div>
             </div>
         </div>
-    )
+    ) : null
 }
 
 export default PartOne;
