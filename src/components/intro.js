@@ -1,10 +1,11 @@
 import React, {useState, useEffect, useRef} from 'react';
 
-import "../assets/stylesheets/intro.css"
+import "../assets/stylesheets/intro.css";
+import Trainmation from "./trainmation";
 
 const Intro = ({setOffsetY, offsetY, setChapter, chapterImages}) => {
     
-    const [trainIndex, setTrainIndex] = useState(0); 
+    const [trainScale, setTrainScale] = useState(0); 
   
     const section = useRef(null);
     
@@ -12,8 +13,8 @@ const Intro = ({setOffsetY, offsetY, setChapter, chapterImages}) => {
 
     useEffect(() => {  
       let maxScroll =  section.current.scrollHeight- window.innerHeight;
-      let scrolltrigger = maxScroll/(23);
-      setTrainIndex(Math.floor(offsetY/scrolltrigger));
+    //   let scrolltrigger = maxScroll);
+      setTrainScale(offsetY/maxScroll);
       if(Math.ceil(offsetY) >= maxScroll-0.5) {
           setChapter(2);
       }
@@ -28,26 +29,12 @@ const Intro = ({setOffsetY, offsetY, setChapter, chapterImages}) => {
         ref={section}>
         <div className="scroll" >
             <div className="intro-image-container">
-                {
-                    chapterImages &&
-                    <img 
-                        className="timestamp" 
-                        src={chapterImages.time} 
-                        alt="2am timestamp"/>
-                }
-                
-                {
-                  chapterImages ? chapterImages.train.map( (image, i) => {
-                        return(
-                            <img 
-                            className="train-image" 
-                            style={{opacity: `${trainIndex === i ? 1 : 0}`}}
-                            src={image} 
-                            key={`train${i}`} 
-                            alt="train"/>
-                        )
-                    }) : null
-                }
+                <Trainmation trainScale={trainScale}></Trainmation>
+                <img 
+                    className="timestamp" 
+                    src={chapterImages.time} 
+                    alt="2am timestamp"/>
+ 
             </div>
 
             <div className="intro-content-container">
