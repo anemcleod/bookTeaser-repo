@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 
 import "../assets/stylesheets/intro.css";
-import Trainmation from "./trainmation";
+import Trainmation from "./svg/trainmation";
 
 const Intro = ({setOffsetY, offsetY, setChapter, chapterImages}) => {
     
@@ -13,7 +13,6 @@ const Intro = ({setOffsetY, offsetY, setChapter, chapterImages}) => {
 
     useEffect(() => {  
       let maxScroll =  section.current.scrollHeight- window.innerHeight;
-    //   let scrolltrigger = maxScroll);
       setTrainScale(offsetY/maxScroll);
       if(Math.ceil(offsetY) >= maxScroll-0.5) {
           setChapter(2);

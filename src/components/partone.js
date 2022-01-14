@@ -1,4 +1,9 @@
 import React, {useState, useEffect, useRef} from 'react';
+
+import HalongBay from './svg/halongBay';
+import MountainRight from './svg/mountainRight'
+import MountainLeft from './svg/mountainLeft'
+
 import '../assets/stylesheets/partone.css';
 
 const PartOne = ({setOffsetY, offsetY, setChapter, chapterImages}) => {
@@ -65,29 +70,28 @@ const PartOne = ({setOffsetY, offsetY, setChapter, chapterImages}) => {
                     }}>
 
                    
-                        <img 
-                            className="partone-background"
-                            src={chapterImages.halongbay} 
-                            alt="boat floating in Ha long Bay"/>
+                        <HalongBay></HalongBay>
                       
                    
-                        <img 
+                        <div 
                             className="partone-mountain-left" 
-                            src={chapterImages.mountleft} alt="limestone mountain"
                             style={{
                                 width: `${80+zoom}%`,
                                 left: `${50+zoom}%`,
                                 bottom: `${0-zoom}%`
-                            }}/>
+                        }}>
+                            <MountainLeft/>
+                        </div>
               
-                        <img 
+                        <div
                             className="partone-mountain-right" 
-                            src={chapterImages.mountright} alt="limestone mountain"
                             style={{
                                 width: `${80+zoom}%`,
                                 right: `${45+zoom}%`,
                                 bottom: `${-5-zoom}%`
-                        }}/>
+                        }}>
+                            <MountainRight/>
+                        </div>
                  
                 </div>
 

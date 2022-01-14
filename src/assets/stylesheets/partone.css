@@ -3,7 +3,8 @@
 }
 
 .scroll-partone {
-    min-height: 400%
+    min-height: 400%;
+    background-color: #cbdbd8;
 }
 
 .partone-background-container {
