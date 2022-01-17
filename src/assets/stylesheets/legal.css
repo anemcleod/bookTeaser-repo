@@ -9,9 +9,7 @@
 .legal-background {
     position: fixed;
     width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    object-position: center;
+    height: 100%;
     z-index: -1;
 }
 

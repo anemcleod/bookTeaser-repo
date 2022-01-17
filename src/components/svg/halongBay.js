@@ -2,7 +2,12 @@ import React from "react";
 
 const HalongBay = () => {
     return (
-        <svg width="100%" height="100%" viewBox="0 0 628 666" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg 
+            width="100%"
+            height="100%" 
+            viewBox="0 0 628 666"
+            preserveAspectRatio="xMaxYMid slice" 
+            fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="628" height="666" fill="#cbdbd8"/>
             <g id="partOneBckground 1" clipPath="url(#clip0_0_1)">
             <g id="layer1">

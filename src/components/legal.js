@@ -1,29 +1,15 @@
-import React, {useState, useEffect} from 'react';
-import Prismic from '@prismicio/client'
+import React from 'react';
 import {Link} from 'react-router-dom';
 import '../assets/stylesheets/legal.css';
+import HalongBay from './svg/halongBay';
  
 const Legal = () => {
 
-    const [bgImage, setbgImage] = useState(null);
-
-    const apiEndpoint = process.env.REACT_APP_PRISMIC_API_ENDPOINT
-    const accessToken = process.env.REACT_APP_PRISMIC_ACCESS_TOKEN
-    const Client = Prismic.client(apiEndpoint, { accessToken });
-
-    useEffect(() => {
-        const fetchDataBay = async () => {
-          const bay = await Client.query( Prismic.Predicates.at('document.type', 'halongbay'));
-          if (bay) {
-            setbgImage(bay.results[0].data);  
-          }
-      }
-      fetchDataBay();
-    }, []);
-
     return (
       <div className="legal-container">
-            <img className="legal-background" src={bgImage ? bgImage.halongbay.url : ''} alt="ha long bay"/>
+          <div className="legal-background">
+            <HalongBay alt="ha long bay"/>
+          </div>
             
             <div className="legal-content-container">
                 <div className="legal-content">
