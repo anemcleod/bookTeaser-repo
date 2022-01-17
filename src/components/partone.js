@@ -6,7 +6,7 @@ import MountainLeft from './svg/mountainLeft'
 
 import '../assets/stylesheets/partone.css';
 
-const PartOne = ({setOffsetY, offsetY, setChapter, chapterImages}) => {
+const PartOne = ({setOffsetY, offsetY, setChapter}) => {
 
     const handleScrollpo = () => setOffsetY(window.pageYOffset);
     const [zoom, setZoom] = useState(1);
@@ -43,7 +43,7 @@ const PartOne = ({setOffsetY, offsetY, setChapter, chapterImages}) => {
     }, [offsetY]);
 
 
-    return chapterImages ? (
+    return (
         <div className="partone-container">
               
             <div 
@@ -113,7 +113,7 @@ const PartOne = ({setOffsetY, offsetY, setChapter, chapterImages}) => {
                 </div>
             </div>
         </div>
-    ) : null
+    ) 
 }
 
 export default PartOne;
