@@ -14,6 +14,19 @@ const PartOne = ({setOffsetY, offsetY, setChapter}) => {
     const reveal = useRef(false);
     const backgroundContainer = useRef(null);
     const partonescroll= useRef(null);
+    const [height, setHeight] = React.useState(window.innerHeight);
+    const breakpoint = 800;
+    const mountainLeftBase = height > breakpoint ? -10 : -5;
+    const mountainRightBase = height > breakpoint ? -20 : -10;
+    const fixBase = height > breakpoint ? 0.3 : 0.5;
+
+    const handleWindowResize = () => setHeight(window.innerHeight)
+    
+    useEffect(() => {
+     handleWindowResize();
+      window.addEventListener("resize", handleWindowResize);
+      return () => window.removeEventListener("resize", handleWindowResize);
+    }, []);
  
     useEffect(() => {  
       setZoom((offsetY - window.innerHeight)/70);
@@ -23,7 +36,7 @@ const PartOne = ({setOffsetY, offsetY, setChapter}) => {
             reveal.current= false;
         };
 
-        if( offsetY > backgroundContainer.current.offsetHeight*0.25){
+        if( offsetY > backgroundContainer.current.offsetHeight*fixBase){
             fix.current = true;
         } else {
             fix.current= false;
@@ -41,19 +54,6 @@ const PartOne = ({setOffsetY, offsetY, setChapter}) => {
       
       return () => window.removeEventListener("scroll", handleScrollpo);
     }, [offsetY]);
-
-
-    const [height, setHeight] = React.useState(window.innerHeight);
-    const breakpoint = 800;
-    let mountainLeftBase = height > breakpoint ? -10 : -5;
-    let mountainRightBase = height > breakpoint ? -20 : -10;
-    const handleWindowResize = () => setHeight(window.innerHeight)
-    React.useEffect(() => {
-     handleWindowResize();
-     console.log("resize");
-      window.addEventListener("resize", handleWindowResize);
-      return () => window.removeEventListener("resize", handleWindowResize);
-    }, [handleWindowResize]);
 
     return (
         <div className="partone-container">
