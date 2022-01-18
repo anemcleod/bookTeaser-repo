@@ -29,10 +29,14 @@ const Intro = ({setOffsetY, offsetY, setChapter, chapterImages}) => {
         <div className="scroll" >
             <div className="intro-image-container">
                 <Trainmation trainScale={trainScale}></Trainmation>
-                <img 
-                    className="timestamp" 
-                    src={chapterImages.time} 
-                    alt="2am timestamp"/>
+                {
+                    chapterImages ? (
+                        <img 
+                            className="timestamp" 
+                            src={chapterImages.time} 
+                            alt="2am timestamp"/>
+                    ) : null
+                }
  
             </div>
 

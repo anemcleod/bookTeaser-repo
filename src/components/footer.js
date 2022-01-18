@@ -6,7 +6,7 @@ import "../assets/stylesheets/footer.css";
 import PaymentPortal from './payment';
 
 const Footer = ({setOffsetY, setChapter}) => {
-
+    window.scrollTo(0, 0);
     const [showPayment, setShowPayment] = useState(false);
 
     const reset = () => {
